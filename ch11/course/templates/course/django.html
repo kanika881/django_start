@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+{% comment %}  Exmaple 1.1 variable {% endcomment %}
+    <!-- Your visible web page content goes here -->
+    <h1>we will be learning django template langauge</h1>
+    {% comment %} <h2> variables </h2> {% endcomment %}
+    {% comment %} <h3> the langauge we are going to learn is {{course}} </h3> {% endcomment %}
+    {% comment %}  Exmaple 1.2 variable {% endcomment %}
+     {% comment %} <h3> the langauge we are going to learn is {{course.cname}} and the duration of the course is {{course.duration}} and the fees is {{course.fees}}</h3>
+      {% endcomment %}
+    {% comment %} filter {% endcomment %}
+    <h2> filter </h2>   
+     {% comment %} <h3> the langauge we are going to learn is {{course.cname|upper}} and the duration of the course is {{course.duration|lower}} and the fees is {{course.fees|truncatechars:2}}</h3>
+      {% endcomment %}
+      {% comment %} <h2> {{course|capfirst}} </h2>
+      <h2>{{course|length}}</h2>
+      <h2>{{course|slice:2}}</h2>
+      <h2>{{course|default:"nothing"}}</h2> {% endcomment %}
+
+      {% comment %} <h2>Date Time</h2>
+      <h3>{{time}}</h3>
+      <h3>{{time|date:'D d M Y'}}</h3>
+      <h3>{{time|date}}</h3>
+      <h3>{{time|time}}</h3>
+      <h3>{{time|time:'H:i'}}</h3>
+      <h3>{{time|date:'SHORT_DATE_FORMAT'}}</h3>
+      <h3>{{time|time:'TIME_FORMAT'}}</h3> {% endcomment %}
+      {% comment %} <h2>Float Numbers</h2>
+      <h3>{{float_nums.num1|floatformat}}</h3>
+      <h3>{{float_nums.num2|floatformat}}</h3>
+      <h3>{{float_nums.num3|floatformat}}</h3>
+      <h3>{{float_nums.num1}}</h3>
+      <h3>{{float_nums.num2}}</h3>
+      <h3>{{float_nums.num3}}</h3>
+      <h3>{{float_nums.num1|floatformat:3}}</h3>
+      <h3>{{float_nums.num2|floatformat:0}}</h3>
+      <h3>{{float_nums.num3|floatformat:3}}</h3> {% endcomment %}
+
+      <h2>If Tag</h2>
+      {% comment %} Exmaple 5.1{% endcomment %}
+      {% comment %} {% if cname %}
+      <h3> the name of course is {{cname}}</h3>
+      {% endif %} {% endcomment %}
+      {% comment %} example 5.2 {% endcomment %}
+      {% comment %} {% if cname %}
+      <h3> the name of course is python</h3>
+      {% endif %} {% endcomment %}
+       {% comment %} {% if cname and numb %}
+      <h3> the name of course is python</h3>
+      {% endif %} {% endcomment %}
+       {% comment %} {% if cname or numb %}
+      <h3> the name of course is python</h3>
+      {% endif %} {% endcomment %}
+
+      {% comment %} {% if cname == "DJANgo"%}
+      <h3> the name of course is python</h3>
+      {% else%}
+      <h3>i am happy</h3>
+      {% endif %} {% endcomment %}
+
+      {% comment %} <h2>FOR Tag</h2> {% endcomment %}
+      
+      {% comment %} {%for name in names%}
+      <ul> {{name}} </ul>
+      {% endfor%}
+</br>
+      {% for name in names reversed%}
+      <ul style="type:dot">{{name}}</ul>
+      {% endfor%}
+      {% for name in names%}
+      <ul> {{forloop.counter}} {{name}}</ul>
+      {%endfor%} {% endcomment %}
+
+      
+      {% comment %} <ul>{{stud.stud1.name}}</ul> {% endcomment %}
+
+      {% for key,value in std_details.items%}
+      
+      {{key}}-{{value}}
+
+      {%endfor%}
+    
+
+
+
+
+
+
+
+
+      
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
