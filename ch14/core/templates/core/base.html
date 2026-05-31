@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {% endblock title%}</title>
+    
+    <!-- Link your CSS stylesheet here -->
+     {% comment %} using cdn for bootstrap {% endcomment %}
+     {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> {% endcomment %}
+      {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+     {% block corecss%}
+     {% comment %} <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}"> {% endcomment %}
+     {%endblock corecss%}
+</head>
+<body>
+
+    <!-- Your website content goes here -->
+    <h1>Holla learning django and bootstrap</h1>
+    {% block content%}
+    {% endblock content%}
+
+    <!-- Link your JavaScript file here -->
+    <script src="script.js"></script>
+</body>
+</html>

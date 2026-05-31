@@ -1,11 +1,9 @@
-{% extends "core/base.html" %}
-{% block basic %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>{% block title%} {% endblock title%}</title>
     
     <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="styles.css">
@@ -14,7 +12,14 @@
 
     <!-- Your visible web page content goes here -->
     <h1>Welcome to My Website</h1>
-{% endblock basic %}
+
 {% block content %}
 
 {% endblock content %}
+
+{% block footer%}
+this is footer
+{% endblock footer%}
+    <script src="script.js"></script>
+</body>
+</html>

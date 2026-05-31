@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    
-    <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+{% extends "core/base.html" %}
+{% block title %}
+python page
+{% endblock title%}
 
-    <!-- Your visible web page content goes here -->
-    <h1>Welcome to My Website</h1>
-    <p>python page</p>
-
-    <!-- Link to your external JavaScript file -->
-    <script src="script.js"></script>
-</body>
-</html>
+{% block content%}
+<h1>
+    python page
+</h1>
+{% endblock content%}
+{% block footer%}
+{{block.super}}
+<p>this is python and the common footer</p>
+{% endblock footer%}

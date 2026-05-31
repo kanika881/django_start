@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% load static%}
+
+{% block title%} 
+HOME
+{% endblock title%}
+
+{% block corecss%}
+{{block.super}}
+<link rel="stylesheet" href="{%static 'core/css/style.css'%}">
+{% endblock corecss%}
+
+ {% block content%}
+ <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-danger">Left</button>
+  <button type="button" class="btn btn-warning">Middle</button>
+  <button type="button" class="btn btn-success">Right</button>
+</div>
+ <h1> this is home page </h1>
+    {% endblock content%}
