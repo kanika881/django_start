@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1> hi this is me </h1>
+    {% if students %}
+    <p> Student List:</p>
+    {% for st in students%}
+    <h2> {{st.name}}-{{st.city}}-{{st.email}} </h2>
+    {% endfor %}
+
+    {% else%}
+    <p> no data <p>
+    {% endif %}
+    <!-- Your visible content goes here -->
+
+    <script src="script.js"></script>
+</body>
+</html>
