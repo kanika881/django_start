@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {% endblock title%}</title>
+    {% block corecss%}
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+    {% comment %} <link rel="stylesheet" href="style.css"> {% endcomment %}
+    {% endblock corecss%}
+</head>
+<body>
+    <!-- Fixed Header Structure -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b z-50">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <!-- Brand -->
+    <a href="#" class="font-bold text-gray-900">Tailwind CSS</a>
+    
+    <!-- Desktop Links (Hidden on mobile) -->
+    <div class="hidden md:flex space-x-6 text-gray-700">
+      {% comment %} first method  {% endcomment %}
+      {% comment %} <a href="/" class="hover:text-blue-600">Home</a>
+      <a href="/about" class="hover:text-blue-600">About</a>
+      <a href="/course/dj" class="hover:text-blue-600">Django</a>
+      <a href="/course/py" class="hover:text-blue-600">Python</a> {% endcomment %}
+      {% url 'home' as hy%}
+      <a href="{{hy}}" class="hover:text-blue-600">Home</a>
+      <a href="{% url 'about'%}" class="hover:text-blue-600">About</a>
+      <a href="{% url 'dj'%}" class="hover:text-blue-600">Django</a>
+      <a href="{% url 'py'%}" class="hover:text-blue-600">Python</a>
+      
+
+    </div>
+    
+    <!-- Mobile Menu Button (Hidden on desktop) -->
+    <div class="md:hidden">
+      <button class="text-gray-600">Menu</button>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+
+
+    {% block content %}   {%  endblock content %}
+    {% block footer%}
+    i am Main footer
+    {% endblock footer%}
+
+    <script src="script.js"></script>
+</body>
+</html>
