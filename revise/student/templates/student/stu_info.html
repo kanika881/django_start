@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    hii
+    <h1> REGISTRATION DATA</h1>
+    {% if data%}
+    {% for st in data%}
+    <ul>{{st.name}}</ul>
+    <ul>{{st.user_id}}</ul>
+    <ul>{{st.email}}</ul>
+    {% endfor %}
+    {% else %}
+    <p> NO Data<p>
+    {% endif %}
+    <hr>
+    <h1> Login Data </h1>
+
+    {% if log_data %}
+    {% for st in log_data%}
+    <ul>user_id:-{{st.user_id}}</ul>
+    {% endfor %}
+    {% else%}
+    <p> no login data </p>
+    {% endif %}
+
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
