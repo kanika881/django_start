@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- form input by input  -->
+     <!-- {{form}} -->
+    <!-- <form action="">
+        Name:{{form.name}}
+        <br>
+        Phone:{{form.phone_no}}
+        Age:{{form.age}}
+    </form> -->
+
+    <!-- form input and label -->
+     <!-- <form action="">
+     {{form.name.label_tag}} {{form.name}}
+     {{form.phone_no.label_tag}}  {{form.phone_no}}
+    </form> -->
+
+    <!-- writing manually -->
+     <!-- <label for="{{form.name.id_for_label}}">Name:</label> {{form.name}}
+     <label for="{{form.phone_no.id_for_label}}">{{form.phone_no.label}}</label>  {{form.phone_no}} -->
+
+     <!-- input field -->
+    <!-- <form action="">
+        <label for="{{form.fname.id_for_label}}">{{form.fname.label}}</label>
+        <input type="text" name="{{form.fname.name}}" required id="{{form.fname.id_for_label_tag}}" value="{{form.fname.value|default:'john'}}">
+    </form>     -->
+
+    {{form.fname.label}}
+    {{form.phone_no.value}}
+    {{form.fname.html_name}}
+    {{form.fname.field.required}}
+    {{form.fname.help_text}}
+    <script src="script.js"></script>
+</body>
+</html>

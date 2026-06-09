@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {{form}} -->
+    <!-- using For loop -->
+     <form action="">
+        {% for field in form.visible_fields%}
+        <label for="{{field.id_for_label}}">{{field.label}}</label>
+        <input type="{{field.field.widget.input_type}}" name="{{field.name}}" required id="{{field.id_for_label}}" placeholder="{{field.field.widget.attrs.placeholder|default:''}}">
+        {% endfor %}
+        {% for field in form.hidden_fields%}
+        <label for="{{field.id_for_label}}">{{field.label}}</label>
+        <input type="{{field.field.widget.input_type}}" name="{{field.name}}" required id="{{field.id_for_label}}" placeholder="{{field.field.widget.attrs.placeholder|default:''}}">
+        {% endfor %}
+    </form>
+</body>
+</html>
